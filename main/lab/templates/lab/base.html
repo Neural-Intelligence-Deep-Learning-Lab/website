@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Neural Intelligence & Deep Learning Lab">
+  <title>{% block title %}NIDL — Neural Intelligence & Deep Learning Lab{% endblock %}</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem("nidl-theme")||"light";</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'lab/css/site.css' %}">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header"><nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="{% url 'home' %}"><strong>NIDL</strong><span>Neural Intelligence<br>&amp; Deep Learning</span></a>
+    <button class="menu-button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div id="nav-links" class="nav-links"><a href="{% url 'home' %}">Home</a><a href="{% url 'advisor' %}">Advisor</a><a href="{% url 'publications' %}">Publications</a><a href="{% url 'team' %}">Team</a><button class="theme-button" type="button" aria-label="Toggle dark mode">◐</button></div>
+  </nav></header>
+  <main id="content">{% block content %}{% endblock %}</main>
+  <footer class="footer"><div><strong>NIDL</strong><span>Neural Intelligence &amp; Deep Learning Lab</span></div><p>Learning systems for a thinking world.</p></footer>
+  <script src="{% static 'lab/js/site.js' %}"></script>
+</body>
+</html>
