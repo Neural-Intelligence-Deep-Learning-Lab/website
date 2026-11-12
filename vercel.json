@@ -1,11 +1,10 @@
 {
     "builds": [
       {
-        "src": "main/main/wsgi.py",
+        "src": "api/index.py",
         "use": "@vercel/python",
         "config": {
           "maxLambdaSize": "50mb"
-       
         }
       },
       {
@@ -23,7 +22,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "main/main/wsgi.py"
+        "dest": "api/index.py"
       }
     ]
   }
