@@ -18,5 +18,5 @@ APP_ROOT = PROJECT_ROOT.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(APP_ROOT))
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+os.environ["DJANGO_SETTINGS_MODULE"] = "settings"
 application = get_asgi_application()
