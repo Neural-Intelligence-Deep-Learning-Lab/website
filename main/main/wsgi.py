@@ -1,9 +1,14 @@
+# main/main/wsgi.py
 import os
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent  # the outer "main" folder
+sys.path.insert(0, str(BASE_DIR))
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "main.settings")
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
-
 application = get_wsgi_application()
-
-app = application
+app = application  # Vercel looks for `app`
